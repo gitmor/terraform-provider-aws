@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
       - name: Apply Labels
-        uses: actions/labeler@v4
+        uses: actions/labeler@v5
         with:
           configuration-path: .github/labeler-pr-triage.yml
           repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
       - name: Apply needs-triage Label
-        uses: actions/labeler@v4
+        uses: actions/labeler@v5
         if: github.event.action == 'opened' && needs.community_check.outputs.maintainer == 'false'
         with:
           configuration-path: .github/labeler-pr-needs-triage.yml
