@@ -11,7 +11,7 @@ jobs:
   Labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
       - name: Apply Labels
         uses: actions/labeler@v4
         with:
@@ -22,7 +22,7 @@ jobs:
     needs: community_check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
       - name: Apply needs-triage Label
         uses: actions/labeler@v4
         if: github.event.action == 'opened' && needs.community_check.outputs.maintainer == 'false'
